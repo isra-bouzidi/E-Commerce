@@ -22,6 +22,9 @@ class AdminController extends Controller
 
         $category->save();
 
-        return redirect()->back();
+        toastr()->timeOut(10000)->closeButton()->success('Category Added Successfully.');
+
+    return redirect()->back();
+
     }
 }
