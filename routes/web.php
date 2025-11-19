@@ -18,6 +18,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
 require __DIR__.'/auth.php';
 
 
@@ -26,4 +27,8 @@ route::get('admin/dashboard',[HomeController::class,'index'])->middleware(['auth
 
 route::get('view_category',[AdminController::class,'view_category'])->middleware(['auth','admin']);
 
+
 route::post('add_category',[AdminController::class,'add_category'])->middleware(['auth','admin']);
+
+
+route::get('delete_category/{id}',[AdminController::class,'delete_category'])->middleware(['auth','admin']);
