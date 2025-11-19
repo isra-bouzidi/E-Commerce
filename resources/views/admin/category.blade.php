@@ -19,6 +19,32 @@
             margin: 30px;
         }
 
+        .table_deg
+        {
+
+          text-align: center;
+          margin: auto;
+          border: 2px solid yellowgreen;
+          margin-top: 50px;
+          width: 600px;
+        }
+
+        th
+        {
+          background: skyblue;
+          padding: 15px;
+          font-size: 20px;
+          font-weight: bold;
+          color:white;
+        }
+
+        td
+        {
+          color:white;
+          padding: 10px;
+          border: 1px solid
+        }
+
     </style>
 
   </head>
@@ -34,9 +60,14 @@
 
           <h1 style="color: white">Add Category</h1>
 
+
           <div class="div_deg">
 
+
+
+
             <form action="{{url('add_category')}}" method="post">
+
                 @csrf
                 
             <div>
@@ -46,6 +77,27 @@
             </div>
 
             </form>
+
+
+            </div>
+
+            <div>
+
+            <table class="table_deg">
+              <tr>
+                <th>Category Name</th>
+              </tr>
+
+              @foreach($data as $data)
+
+              <tr>
+                <td>{{$data->category_name}}</td>
+              </tr>
+              
+              @endforeach
+
+            </table>
+
             </div>
       </div>
     </div>
