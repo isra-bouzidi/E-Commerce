@@ -32,6 +32,7 @@
     {
         border: 1px solid skyblue;
         text-align: center;
+        color: white;
     }
 
 
@@ -86,6 +87,7 @@
             <td>
 
             <img height="120" width="120" src="products/{{$products->image}}" alt="">
+
             </td>
 
             </tr>
@@ -98,10 +100,20 @@
             </table>
 
 
+            
+
+
 
 
             </div>
+
+            <div class="div_deg">
+
+            {{$product->onEachSide(1)->links()}}
+
+            </div>
           
+            
 
 
       </div>
