@@ -106,7 +106,7 @@
                 
 
                 <td>
-                  <a class="btn btn-danger" onClick="confirmation(event)" href="{{url('delete_category',$data->id)}}">Delete</a>
+                  <a class="btn btn-danger" onclick="confirmation(event)" href="{{url('delete_category',$data->id)}}">Delete</a>
                 </td>
               </tr>
               
