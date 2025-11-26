@@ -151,5 +151,51 @@ class AdminController extends Controller
         toastr()->timeOut(10000)->closeButton()->success('Product Deleted Successfully.');
 
         return redirect()->back();
+
+    }
+
+    public function update_product($id)
+    {
+        $data = Product::find($id);
+
+        $category = Category::all();
+
+        return view('admin.update_page', compact('data','category'));
+
+
+    }
+
+
+    public function edit_product(Request $request, $id)
+    {
+        $data = Product::find($id);
+
+        $data->title = $request->title;
+
+        $data->description = $request->description;
+
+        $data->price = $request->price;
+
+        $data->quantity = $request->qty;
+
+        $data->category = $request->category;
+
+        
+        $image = $request->image;
+        
+        if ($request->hasFile('image')) {
+
+        $image = $request->file('image');
+        $imagename = time() . '.' . $image->getClientOriginalExtension();
+        $image->move('products', $imagename);
+        $data->image = $imagename;
+
+        }   
+
+        $data->save();
+
+        toastr()->timeOut(10000)->closeButton()->success('Product Updated Successfully.');
+
+        return redirect('/view_product');
     }
 }

@@ -67,7 +67,11 @@
 
             <th>Image</th>
 
+            <th>Edit</th>
+
             <th>Delete</th>
+
+
 
             </tr>
 
@@ -90,6 +94,10 @@
 
             <img height="120" width="120" src="products/{{$products->image}}" alt="">
 
+            </td>
+
+            <td>
+                <a class="btn btn-success" href="{{url('update_product',$products->id)}}">Edit</a>
             </td>
 
             <td>
