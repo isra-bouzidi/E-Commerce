@@ -186,16 +186,39 @@ class AdminController extends Controller
         if ($request->hasFile('image')) {
 
         $image = $request->file('image');
+
         $imagename = time() . '.' . $image->getClientOriginalExtension();
+
         $image->move('products', $imagename);
+
         $data->image = $imagename;
 
         }   
+
+
+
 
         $data->save();
 
         toastr()->timeOut(10000)->closeButton()->success('Product Updated Successfully.');
 
         return redirect('/view_product');
+
+
+
+    }
+
+
+    public function product_search(Request $request)
+    {
+
+        $search = $request->search;
+
+        $product = Product::where('title', 'LIKE', '%'.$search.'%')->orwhere('category', 'LIKE', '%'.$search.'%')->paginate(3);
+
+        return view('admin.view_product', compact('product'));
+
+
+        
     }
 }
