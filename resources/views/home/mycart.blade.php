@@ -62,6 +62,48 @@
 
 <div class="div_deg">
 
+<div>
+
+<form action="">
+
+<div>
+
+  <label>Receiver Name</label>
+
+  <input type="text" name="name">
+
+</div>
+
+<div>
+
+  <label>Receiver Address</label>
+
+  <textarea name="address"></textarea>
+
+</div>
+
+<div>
+
+  <label>Receiver Phone</label>
+
+  <input type="text" name="phone">
+
+</div>
+
+<div>
+
+
+  <input class="btn btn-primary" type="submit" value="Place Order">
+
+</div>
+
+
+
+</form>
+
+
+</div>
+
 
 <table>
 
