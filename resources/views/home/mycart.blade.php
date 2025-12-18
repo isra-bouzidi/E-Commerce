@@ -38,6 +38,13 @@
     border: 2px solid skyblue;
   }
 
+  .cart_value
+  {
+    text-align: center;
+    margin-bottom: 70px;
+    padding: 18px;
+  }
+
 
 </style>
 
@@ -68,6 +75,15 @@
 
 
 </tr>
+
+<?php
+
+$value=0;
+
+?>
+
+
+
 @foreach($cart as $cart)
 <tr>
 
@@ -78,12 +94,26 @@
 
 </tr>
 
+<?php
+
+$value = $value + $cart->product->price;
+
+?>
+
+
+
+
 @endforeach
 </table>
 
 </div>
 
+<div class="cart_value">
 
+<h3>Total Value Of Cart is: ${{$value}}</h3>
+
+
+</div>
    
 
   <!-- info section -->
