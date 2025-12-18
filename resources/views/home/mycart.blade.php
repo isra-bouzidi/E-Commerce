@@ -73,6 +73,8 @@
 
 <th>Image</th>
 
+<th>Remove</th>
+
 
 </tr>
 
@@ -90,6 +92,7 @@ $value=0;
 <td>{{$cart->product->title}}</td>
 <td>{{$cart->product->price}}</td>
 <td><img width="150" src="/products/{{$cart->product->image}}" alt="Product Image" style="width: 100px; height: 100px;"></td>
+<td><a class="btn btn-danger" href="{{url('remove_cart',$cart->id)}}">Remove</a></td>
 
 
 </tr>

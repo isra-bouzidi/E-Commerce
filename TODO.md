@@ -1,0 +1,3 @@
+- [x] Add new route 'remove_cart/{id}' in routes/web.php
+- [x] Add remove_cart method in HomeController.php
+- [x] Add "Action" column and remove button in mycart.blade.php table
