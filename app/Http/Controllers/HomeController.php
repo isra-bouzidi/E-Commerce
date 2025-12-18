@@ -150,6 +150,25 @@ class HomeController extends Controller
 
     }
 
+    public function remove_cart($id)
+{
+    $user_id = Auth::id();
+
+    $cart = Cart::where('id', $id)
+                ->where('user_id', $user_id)
+                ->first();
+
+    if (!$cart) {
+        toastr()->error('Cart item not found!');
+        return redirect()->back();
+    }
+
+    $cart->delete();
+
+    toastr()->timeOut(10000)->closeButton()->success('Product removed from cart successfully!');
+
+    return redirect()->back();
+}
 
 
 }
